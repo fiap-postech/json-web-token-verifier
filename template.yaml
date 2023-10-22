@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  json-web-token-verifier
+
+  Sample SAM Template for json-web-token-verifier
+  
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  JsonWebTokenVerifierFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      FunctionName: json-web-token-verifier
+      CodeUri: app/
+      Handler: app.handler
+      Runtime: nodejs18.x
+      Architectures:
+        - x86_64
+      Policies:
+        - AWSSecretsManagerGetSecretValuePolicy:
+            SecretArn: !FindInMap [AuthVerifierKeySecretArn, !Ref Environment, arn]
+      Environment:
+        Variables:
+          VERIFIER_SECRET_ID: "auth/Verifier/Key"
+
+Parameters:
+  Environment:
+    Type: String
+    Default: default
+    AllowedValues:
+      - default
+      - prod
+
+Mappings:
+  AuthVerifierKeySecretArn:
+    default:
+      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Verifier/Key-z3EsFk'
+    prod:
+      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Verifier/Key-z3EsFk'
+
+Outputs:
+  JsonWebTokenVerifierFunction:
+    Description: "Json Web Token Lambda Function ARN"
+    Value: !GetAtt JsonWebTokenVerifierFunction.Arn
+  JsonWebTokenVerifierFunctionIamRole:
+    Description: "Implicit IAM Role created for Json Web Token function"
+    Value: !GetAtt JsonWebTokenVerifierFunctionRole.Arn

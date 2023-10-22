@@ -1,0 +1,5 @@
+{
+  "type": "TOKEN",
+  "methodArn": "arn:aws:execute-api:sa-east-1:652613197255:sqzejh0vll/dev/POST/tmp/test/sns",
+  "authorizationToken": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMGQwM2VlY2MtYWVlNS00ZDJkLWEyMjQtY2U5ZjhhZjEwZDU3IiwiaWF0IjoxNjk3NjY1NDU3LCJleHAiOjE2OTc2NjkwNTd9.VGF5rraYuxC_4YrA7gZyjc5eQjng1jh58YXYijOgGdffq-fuvufLsZ2o3lJ6UbGF1Tr3Cbjxpo_no7rhwjafPozySP_3lfTWi7BcyOXrKORhHw3hIf7FDlgRnZM8I5pQzOSzqM3LR4p5z6ekUd4b0z_hzauaPtAnjZrp3vv0gnc8foGHQnqVu4aBi6cXi5Enc0xjtXncKj5pxDlCo1fyzDFsJn9jrGibuE9ShVdguQsvGJmI_3KUdcUcTYabkBQrCVOPHolV_j6yxsnUQk7TZOYfMxdSuyc1D-lQt2hZcwCt74fB8PhtSeHESIhPeVCj8KNTQ3IrVTybbK2uzfey8Q"
+}
