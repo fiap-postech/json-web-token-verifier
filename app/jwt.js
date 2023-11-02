@@ -10,7 +10,7 @@ export default {
             });
         }
 
-        jsonwebtoken.verify(token, verifierParams.publicKey, { algorithms: verifierParams.algorithm }, (error, decoded) => {
+        jsonwebtoken.verify(token, verifierParams.key, { algorithms: verifierParams.algorithm }, (error, decoded) => {
             if (error) {
                 console.error(`Error: ${error}`);
                 reject(error);

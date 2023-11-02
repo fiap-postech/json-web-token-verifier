@@ -38,9 +38,9 @@ Parameters:
 Mappings:
   AuthVerifierKeySecretArn:
     default:
-      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Verifier/Key-z3EsFk'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-BTXX1H'
     prod:
-      arn: 'arn:aws:secretsmanager:sa-east-1:652613197255:secret:auth/Verifier/Key-z3EsFk'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-BTXX1H'
 
 Outputs:
   JsonWebTokenVerifierFunction:

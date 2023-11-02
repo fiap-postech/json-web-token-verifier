@@ -30,7 +30,7 @@ capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
 s3_prefix = "json-web-token-verifier"
-region = "sa-east-1"
+region = "us-east-1"
 disable_rollback = false
 image_repositories = []
 parameter_overrides = "Environment=default"
@@ -39,7 +39,7 @@ parameter_overrides = "Environment=default"
 stack_name = "json-web-token-verifier"
 resolve_s3 = true
 s3_prefix = "json-web-token-verifier"
-region = "sa-east-1"
+region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
 disable_rollback = false
