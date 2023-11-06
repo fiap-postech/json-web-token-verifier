@@ -19,7 +19,7 @@ const generatePolicy = function(principalId, effect, resource) {
 
 export const handler = async (event) => {
     try {
-        // console.log(`Event: ${JSON.stringify(event)}`);
+        console.log(`Event: ${JSON.stringify(event)}`);
 
         const authorization = event.authorizationToken;
         const verifierParams = await secretsManager.retrieve(process.env.VERIFIER_SECRET_ID);
