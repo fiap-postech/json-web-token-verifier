@@ -28,6 +28,6 @@ export const handler = async (event) => {
         return generatePolicy(token.uuid, 'Allow', event.methodArn);
     } catch (error) {
         console.error(error);
-        return generatePolicy('undefined', 'Unauthorized', event.methodArn);
+        return generatePolicy('undefined', 'Deny', event.methodArn);
     }
 };
