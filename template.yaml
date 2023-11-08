@@ -40,7 +40,7 @@ Mappings:
     default:
       arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-mcRsrL'
     prod:
-      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-wJhBHK'
+      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-5msQtK'
 
 Outputs:
   JsonWebTokenVerifierFunction:
