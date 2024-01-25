@@ -20,32 +20,33 @@ Resources:
       Runtime: nodejs18.x
       Architectures:
         - x86_64
-      Policies:
-        - AWSSecretsManagerGetSecretValuePolicy:
-            SecretArn: !FindInMap [AuthVerifierKeySecretArn, !Ref Environment, arn]
+      Role: 'arn:aws:iam::271224312941:role/LabRole'
+#      Policies:
+#        - AWSSecretsManagerGetSecretValuePolicy:
+#            SecretArn: !FindInMap [AuthVerifierKeySecretArn, !Ref Environment, arn]
       Environment:
         Variables:
           VERIFIER_SECRET_ID: "auth/Verifier/Key"
 
-Parameters:
-  Environment:
-    Type: String
-    Default: default
-    AllowedValues:
-      - default
-      - prod
+#Parameters:
+#  Environment:
+#    Type: String
+#    Default: default
+#    AllowedValues:
+#      - default
+#      - prod
 
-Mappings:
-  AuthVerifierKeySecretArn:
-    default:
-      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-mcRsrL'
-    prod:
-      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-5msQtK'
+#Mappings:
+#  AuthVerifierKeySecretArn:
+#    default:
+#      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-mcRsrL'
+#    prod:
+#      arn: 'arn:aws:secretsmanager:us-east-1:598135944514:secret:auth/Verifier/Key-5msQtK'
 
 Outputs:
   JsonWebTokenVerifierFunction:
     Description: "Json Web Token Lambda Function ARN"
     Value: !GetAtt JsonWebTokenVerifierFunction.Arn
-  JsonWebTokenVerifierFunctionIamRole:
-    Description: "Implicit IAM Role created for Json Web Token function"
-    Value: !GetAtt JsonWebTokenVerifierFunctionRole.Arn
+#  JsonWebTokenVerifierFunctionIamRole:
+#    Description: "Implicit IAM Role created for Json Web Token function"
+#    Value: !GetAtt JsonWebTokenVerifierFunctionRole.Arn
